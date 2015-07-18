@@ -1,0 +1,755 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CE4266F91B5AB92F00324754 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4266F81B5AB92F00324754 /* AppDelegate.swift */; };
+		CE4266FB1B5AB92F00324754 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4266FA1B5AB92F00324754 /* ViewController.swift */; };
+		CE4266FE1B5AB92F00324754 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE4266FC1B5AB92F00324754 /* Main.storyboard */; };
+		CE4267001B5AB92F00324754 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE4266FF1B5AB92F00324754 /* Assets.xcassets */; };
+		CE4267031B5AB92F00324754 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE4267011B5AB92F00324754 /* LaunchScreen.storyboard */; };
+		CE42670E1B5AB92F00324754 /* Dont_PanicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE42670D1B5AB92F00324754 /* Dont_PanicTests.swift */; };
+		CE4267191B5AB92F00324754 /* Dont_PanicUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4267181B5AB92F00324754 /* Dont_PanicUITests.swift */; };
+		CE42671E1B5AB92F00324754 /* Dont Panic WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = CE42671D1B5AB92F00324754 /* Dont Panic WatchKit App.app */; };
+		CE4267241B5AB92F00324754 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE4267221B5AB92F00324754 /* Interface.storyboard */; };
+		CE4267261B5AB92F00324754 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE4267251B5AB92F00324754 /* Assets.xcassets */; };
+		CE42672D1B5AB93000324754 /* Dont Panic WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CE42672C1B5AB93000324754 /* Dont Panic WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CE4267321B5AB93000324754 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4267311B5AB93000324754 /* InterfaceController.swift */; };
+		CE4267341B5AB93000324754 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4267331B5AB93000324754 /* ExtensionDelegate.swift */; };
+		CE4267361B5AB93000324754 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE4267351B5AB93000324754 /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CE42670A1B5AB92F00324754 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE4266ED1B5AB92F00324754 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CE4266F41B5AB92F00324754;
+			remoteInfo = "Dont Panic";
+		};
+		CE4267151B5AB92F00324754 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE4266ED1B5AB92F00324754 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CE4266F41B5AB92F00324754;
+			remoteInfo = "Dont Panic";
+		};
+		CE42671F1B5AB92F00324754 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE4266ED1B5AB92F00324754 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CE42671C1B5AB92F00324754;
+			remoteInfo = "Dont Panic WatchKit App";
+		};
+		CE42672E1B5AB93000324754 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE4266ED1B5AB92F00324754 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CE42672B1B5AB93000324754;
+			remoteInfo = "Dont Panic WatchKit Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CE42673D1B5AB93000324754 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				CE42672D1B5AB93000324754 /* Dont Panic WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE4267411B5AB93000324754 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				CE42671E1B5AB92F00324754 /* Dont Panic WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		CE4266F51B5AB92F00324754 /* Dont Panic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dont Panic.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE4266F81B5AB92F00324754 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CE4266FA1B5AB92F00324754 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CE4266FD1B5AB92F00324754 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CE4266FF1B5AB92F00324754 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CE4267021B5AB92F00324754 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CE4267041B5AB92F00324754 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE4267091B5AB92F00324754 /* Dont PanicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dont PanicTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE42670D1B5AB92F00324754 /* Dont_PanicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dont_PanicTests.swift; sourceTree = "<group>"; };
+		CE42670F1B5AB92F00324754 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE4267141B5AB92F00324754 /* Dont PanicUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Dont PanicUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE4267181B5AB92F00324754 /* Dont_PanicUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dont_PanicUITests.swift; sourceTree = "<group>"; };
+		CE42671A1B5AB92F00324754 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE42671D1B5AB92F00324754 /* Dont Panic WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dont Panic WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE4267231B5AB92F00324754 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		CE4267251B5AB92F00324754 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CE4267271B5AB92F00324754 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE42672C1B5AB93000324754 /* Dont Panic WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Dont Panic WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE4267311B5AB93000324754 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		CE4267331B5AB93000324754 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		CE4267351B5AB93000324754 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CE4267371B5AB93000324754 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CE4266F21B5AB92F00324754 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE4267061B5AB92F00324754 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE4267111B5AB92F00324754 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE4267291B5AB93000324754 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CE4266EC1B5AB92F00324754 = {
+			isa = PBXGroup;
+			children = (
+				CE4266F71B5AB92F00324754 /* Dont Panic */,
+				CE42670C1B5AB92F00324754 /* Dont PanicTests */,
+				CE4267171B5AB92F00324754 /* Dont PanicUITests */,
+				CE4267211B5AB92F00324754 /* Dont Panic WatchKit App */,
+				CE4267301B5AB93000324754 /* Dont Panic WatchKit Extension */,
+				CE4266F61B5AB92F00324754 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CE4266F61B5AB92F00324754 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CE4266F51B5AB92F00324754 /* Dont Panic.app */,
+				CE4267091B5AB92F00324754 /* Dont PanicTests.xctest */,
+				CE4267141B5AB92F00324754 /* Dont PanicUITests.xctest */,
+				CE42671D1B5AB92F00324754 /* Dont Panic WatchKit App.app */,
+				CE42672C1B5AB93000324754 /* Dont Panic WatchKit Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CE4266F71B5AB92F00324754 /* Dont Panic */ = {
+			isa = PBXGroup;
+			children = (
+				CE4266F81B5AB92F00324754 /* AppDelegate.swift */,
+				CE4266FA1B5AB92F00324754 /* ViewController.swift */,
+				CE4266FC1B5AB92F00324754 /* Main.storyboard */,
+				CE4266FF1B5AB92F00324754 /* Assets.xcassets */,
+				CE4267011B5AB92F00324754 /* LaunchScreen.storyboard */,
+				CE4267041B5AB92F00324754 /* Info.plist */,
+			);
+			path = "Dont Panic";
+			sourceTree = "<group>";
+		};
+		CE42670C1B5AB92F00324754 /* Dont PanicTests */ = {
+			isa = PBXGroup;
+			children = (
+				CE42670D1B5AB92F00324754 /* Dont_PanicTests.swift */,
+				CE42670F1B5AB92F00324754 /* Info.plist */,
+			);
+			path = "Dont PanicTests";
+			sourceTree = "<group>";
+		};
+		CE4267171B5AB92F00324754 /* Dont PanicUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CE4267181B5AB92F00324754 /* Dont_PanicUITests.swift */,
+				CE42671A1B5AB92F00324754 /* Info.plist */,
+			);
+			path = "Dont PanicUITests";
+			sourceTree = "<group>";
+		};
+		CE4267211B5AB92F00324754 /* Dont Panic WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				CE4267221B5AB92F00324754 /* Interface.storyboard */,
+				CE4267251B5AB92F00324754 /* Assets.xcassets */,
+				CE4267271B5AB92F00324754 /* Info.plist */,
+			);
+			path = "Dont Panic WatchKit App";
+			sourceTree = "<group>";
+		};
+		CE4267301B5AB93000324754 /* Dont Panic WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				CE4267311B5AB93000324754 /* InterfaceController.swift */,
+				CE4267331B5AB93000324754 /* ExtensionDelegate.swift */,
+				CE4267351B5AB93000324754 /* Assets.xcassets */,
+				CE4267371B5AB93000324754 /* Info.plist */,
+			);
+			path = "Dont Panic WatchKit Extension";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CE4266F41B5AB92F00324754 /* Dont Panic */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE4267421B5AB93000324754 /* Build configuration list for PBXNativeTarget "Dont Panic" */;
+			buildPhases = (
+				CE4266F11B5AB92F00324754 /* Sources */,
+				CE4266F21B5AB92F00324754 /* Frameworks */,
+				CE4266F31B5AB92F00324754 /* Resources */,
+				CE4267411B5AB93000324754 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CE4267201B5AB92F00324754 /* PBXTargetDependency */,
+			);
+			name = "Dont Panic";
+			productName = "Dont Panic";
+			productReference = CE4266F51B5AB92F00324754 /* Dont Panic.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CE4267081B5AB92F00324754 /* Dont PanicTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE4267451B5AB93000324754 /* Build configuration list for PBXNativeTarget "Dont PanicTests" */;
+			buildPhases = (
+				CE4267051B5AB92F00324754 /* Sources */,
+				CE4267061B5AB92F00324754 /* Frameworks */,
+				CE4267071B5AB92F00324754 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CE42670B1B5AB92F00324754 /* PBXTargetDependency */,
+			);
+			name = "Dont PanicTests";
+			productName = "Dont PanicTests";
+			productReference = CE4267091B5AB92F00324754 /* Dont PanicTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CE4267131B5AB92F00324754 /* Dont PanicUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE4267481B5AB93000324754 /* Build configuration list for PBXNativeTarget "Dont PanicUITests" */;
+			buildPhases = (
+				CE4267101B5AB92F00324754 /* Sources */,
+				CE4267111B5AB92F00324754 /* Frameworks */,
+				CE4267121B5AB92F00324754 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CE4267161B5AB92F00324754 /* PBXTargetDependency */,
+			);
+			name = "Dont PanicUITests";
+			productName = "Dont PanicUITests";
+			productReference = CE4267141B5AB92F00324754 /* Dont PanicUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		CE42671C1B5AB92F00324754 /* Dont Panic WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE42673E1B5AB93000324754 /* Build configuration list for PBXNativeTarget "Dont Panic WatchKit App" */;
+			buildPhases = (
+				CE42671B1B5AB92F00324754 /* Resources */,
+				CE42673D1B5AB93000324754 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CE42672F1B5AB93000324754 /* PBXTargetDependency */,
+			);
+			name = "Dont Panic WatchKit App";
+			productName = "Dont Panic WatchKit App";
+			productReference = CE42671D1B5AB92F00324754 /* Dont Panic WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		CE42672B1B5AB93000324754 /* Dont Panic WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE42673A1B5AB93000324754 /* Build configuration list for PBXNativeTarget "Dont Panic WatchKit Extension" */;
+			buildPhases = (
+				CE4267281B5AB93000324754 /* Sources */,
+				CE4267291B5AB93000324754 /* Frameworks */,
+				CE42672A1B5AB93000324754 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Dont Panic WatchKit Extension";
+			productName = "Dont Panic WatchKit Extension";
+			productReference = CE42672C1B5AB93000324754 /* Dont Panic WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CE4266ED1B5AB92F00324754 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Gopher Studios";
+				TargetAttributes = {
+					CE4266F41B5AB92F00324754 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					CE4267081B5AB92F00324754 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = CE4266F41B5AB92F00324754;
+					};
+					CE4267131B5AB92F00324754 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = CE4266F41B5AB92F00324754;
+					};
+					CE42671C1B5AB92F00324754 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					CE42672B1B5AB93000324754 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+				};
+			};
+			buildConfigurationList = CE4266F01B5AB92F00324754 /* Build configuration list for PBXProject "Dont Panic" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CE4266EC1B5AB92F00324754;
+			productRefGroup = CE4266F61B5AB92F00324754 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CE4266F41B5AB92F00324754 /* Dont Panic */,
+				CE4267081B5AB92F00324754 /* Dont PanicTests */,
+				CE4267131B5AB92F00324754 /* Dont PanicUITests */,
+				CE42671C1B5AB92F00324754 /* Dont Panic WatchKit App */,
+				CE42672B1B5AB93000324754 /* Dont Panic WatchKit Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CE4266F31B5AB92F00324754 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE4267031B5AB92F00324754 /* LaunchScreen.storyboard in Resources */,
+				CE4267001B5AB92F00324754 /* Assets.xcassets in Resources */,
+				CE4266FE1B5AB92F00324754 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE4267071B5AB92F00324754 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE4267121B5AB92F00324754 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE42671B1B5AB92F00324754 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE4267261B5AB92F00324754 /* Assets.xcassets in Resources */,
+				CE4267241B5AB92F00324754 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE42672A1B5AB93000324754 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE4267361B5AB93000324754 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CE4266F11B5AB92F00324754 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE4266FB1B5AB92F00324754 /* ViewController.swift in Sources */,
+				CE4266F91B5AB92F00324754 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE4267051B5AB92F00324754 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE42670E1B5AB92F00324754 /* Dont_PanicTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE4267101B5AB92F00324754 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE4267191B5AB92F00324754 /* Dont_PanicUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE4267281B5AB93000324754 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE4267341B5AB93000324754 /* ExtensionDelegate.swift in Sources */,
+				CE4267321B5AB93000324754 /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CE42670B1B5AB92F00324754 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CE4266F41B5AB92F00324754 /* Dont Panic */;
+			targetProxy = CE42670A1B5AB92F00324754 /* PBXContainerItemProxy */;
+		};
+		CE4267161B5AB92F00324754 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CE4266F41B5AB92F00324754 /* Dont Panic */;
+			targetProxy = CE4267151B5AB92F00324754 /* PBXContainerItemProxy */;
+		};
+		CE4267201B5AB92F00324754 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CE42671C1B5AB92F00324754 /* Dont Panic WatchKit App */;
+			targetProxy = CE42671F1B5AB92F00324754 /* PBXContainerItemProxy */;
+		};
+		CE42672F1B5AB93000324754 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CE42672B1B5AB93000324754 /* Dont Panic WatchKit Extension */;
+			targetProxy = CE42672E1B5AB93000324754 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CE4266FC1B5AB92F00324754 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE4266FD1B5AB92F00324754 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CE4267011B5AB92F00324754 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE4267021B5AB92F00324754 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		CE4267221B5AB92F00324754 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE4267231B5AB92F00324754 /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CE4267381B5AB93000324754 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CE4267391B5AB93000324754 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CE42673B1B5AB93000324754 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Dont Panic WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.GopherStudios.Dont-Panic.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		CE42673C1B5AB93000324754 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Dont Panic WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.GopherStudios.Dont-Panic.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		CE42673F1B5AB93000324754 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = Dont_Panic_WatchKit_Extension;
+				INFOPLIST_FILE = "Dont Panic WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.GopherStudios.Dont-Panic.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		CE4267401B5AB93000324754 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				IBSC_MODULE = Dont_Panic_WatchKit_Extension;
+				INFOPLIST_FILE = "Dont Panic WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.GopherStudios.Dont-Panic.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+		CE4267431B5AB93000324754 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Dont Panic/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.GopherStudios.Dont-Panic";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CE4267441B5AB93000324754 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Dont Panic/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.GopherStudios.Dont-Panic";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		CE4267461B5AB93000324754 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Dont PanicTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.GopherStudios.Dont-PanicTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dont Panic.app/Dont Panic";
+			};
+			name = Debug;
+		};
+		CE4267471B5AB93000324754 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Dont PanicTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.GopherStudios.Dont-PanicTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dont Panic.app/Dont Panic";
+			};
+			name = Release;
+		};
+		CE4267491B5AB93000324754 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Dont PanicUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.GopherStudios.Dont-PanicUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Dont Panic";
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		CE42674A1B5AB93000324754 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Dont PanicUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.GopherStudios.Dont-PanicUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Dont Panic";
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CE4266F01B5AB92F00324754 /* Build configuration list for PBXProject "Dont Panic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE4267381B5AB93000324754 /* Debug */,
+				CE4267391B5AB93000324754 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE42673A1B5AB93000324754 /* Build configuration list for PBXNativeTarget "Dont Panic WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE42673B1B5AB93000324754 /* Debug */,
+				CE42673C1B5AB93000324754 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CE42673E1B5AB93000324754 /* Build configuration list for PBXNativeTarget "Dont Panic WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE42673F1B5AB93000324754 /* Debug */,
+				CE4267401B5AB93000324754 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CE4267421B5AB93000324754 /* Build configuration list for PBXNativeTarget "Dont Panic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE4267431B5AB93000324754 /* Debug */,
+				CE4267441B5AB93000324754 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CE4267451B5AB93000324754 /* Build configuration list for PBXNativeTarget "Dont PanicTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE4267461B5AB93000324754 /* Debug */,
+				CE4267471B5AB93000324754 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		CE4267481B5AB93000324754 /* Build configuration list for PBXNativeTarget "Dont PanicUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE4267491B5AB93000324754 /* Debug */,
+				CE42674A1B5AB93000324754 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CE4266ED1B5AB92F00324754 /* Project object */;
+}
