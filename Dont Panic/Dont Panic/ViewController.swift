@@ -15,7 +15,6 @@ import MessageUI
 class ViewController: UIViewController, UITextFieldDelegate, WCSessionDelegate, CLLocationManagerDelegate, MFMessageComposeViewControllerDelegate {
 
     @IBOutlet weak var phoneNumber: UITextField!
-    @IBOutlet weak var timeUntilCall: UILabel!
     @IBOutlet weak var theButton: UIButton!
     
     let session : WCSession!    //sets the watch connectivity session
@@ -51,28 +50,11 @@ class ViewController: UIViewController, UITextFieldDelegate, WCSessionDelegate, 
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    @IBAction func timeStepper(sender: UIStepper) {
-        
-        let (minutes,seconds) = secondsToMinutesSeconds(Int(sender.value))
-        var secondsString = "00"
-        
-        if (seconds < 10){
-            secondsString = "0\(seconds)"
-        }
-        else{
-            secondsString = "\(seconds)"
-        }
-        
-        self.timeUntilCall.text = ("\(minutes):\(secondsString)")
-    }
 
     @IBAction func buttonPressed(sender: AnyObject) {
         panicInitated()
     }
     
-    func secondsToMinutesSeconds (seconds : Int) -> (Int, Int) {
-        return ((seconds % 3600) / 60, (seconds % 3600) % 60)
-    }
     
     
     func session(session: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
