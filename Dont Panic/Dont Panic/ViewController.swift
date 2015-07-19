@@ -18,8 +18,9 @@ class ViewController: UIViewController, UITextFieldDelegate, WCSessionDelegate, 
     @IBOutlet weak var timeUntilCall: UILabel!
     
     let session : WCSession!    //sets the watch connectivity session
-    let locationManager = CLLocationManager()
+    let locationManager = CLLocationManager() //sets the location manager for getting core location
     
+    //we need to set up the watch connect session if possible
     required init?(coder aDecoder: NSCoder) {
         self.session = WCSession.defaultSession()
         super.init(coder: aDecoder)
@@ -31,13 +32,6 @@ class ViewController: UIViewController, UITextFieldDelegate, WCSessionDelegate, 
             session.delegate = self
             session.activateSession()
         }
-//        if CLLocationManager.authorizationStatus() == .NotDetermined {
-//            locationManager.requestWhenInUseAuthorization()
-//        }
-//        
-//        if CLLocationManager.locationServicesEnabled() {
-//            locationManager.startUpdatingLocation()
-//        }
         
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -72,6 +66,7 @@ class ViewController: UIViewController, UITextFieldDelegate, WCSessionDelegate, 
         return ((seconds % 3600) / 60, (seconds % 3600) % 60)
     }
     
+    
     func session(session: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
         
         // verify that we've gotten a number at the "buttonOffset" key
@@ -92,8 +87,11 @@ class ViewController: UIViewController, UITextFieldDelegate, WCSessionDelegate, 
                 //callContact(self.phoneNumber.text!)
     }
     
+    //function for setting up and sending a text to your emergency contact
     func sendText(){
         let location = locationManager.location
+        
+        //The CLGeocoder gives us an actual street address from the Core Location
         CLGeocoder().reverseGeocodeLocation(location!, completionHandler: {(placemarks, error) -> Void in
             print(location)
             
@@ -102,6 +100,7 @@ class ViewController: UIViewController, UITextFieldDelegate, WCSessionDelegate, 
                 return
             }
             
+            //here we take the placemarks and set them to strings for use in the text message setup
             if let pm = placemarks!.first {
                 var textString : String
                 self.locationManager.stopUpdatingLocation()
@@ -127,10 +126,12 @@ class ViewController: UIViewController, UITextFieldDelegate, WCSessionDelegate, 
 
     }
     
+    //This function returns us from the message view controller once the message is actually sent.
     func messageComposeViewController(controller: MFMessageComposeViewController, didFinishWithResult result: MessageComposeResult) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
+    //calls your set contact. This isn't actually implemented, but is here for possible future watch use
     func callContact(phoneNumber : String){
         
         if(validate(phoneNumber)){
@@ -141,6 +142,8 @@ class ViewController: UIViewController, UITextFieldDelegate, WCSessionDelegate, 
         }
     }
     
+    
+    //this function validates the phone number string using regex matching
     func validate(value: String) -> Bool {
         
         let PHONE_REGEX = "^\\d{3}-\\d{3}-\\d{4}$"
@@ -153,6 +156,7 @@ class ViewController: UIViewController, UITextFieldDelegate, WCSessionDelegate, 
         
     }
     
+    //This handles any possible location manager update failures
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
         print("Error while updating location " + error.localizedDescription)
     }
