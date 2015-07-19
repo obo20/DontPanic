@@ -17,6 +17,10 @@ class ViewController: UIViewController, UITextFieldDelegate, WCSessionDelegate, 
     @IBOutlet weak var phoneNumber: UITextField!
     @IBOutlet weak var theButton: UIButton!
     
+    var tapTime1 : NSTimeInterval = 10 //used for keepings track of time between taps
+    var tapTime2 : NSTimeInterval = 20 //used for keepings track of time between taps
+    var tapTime3 : NSTimeInterval = 30 //used for keepings track of time between taps
+    
     let session : WCSession!    //sets the watch connectivity session
     let locationManager = CLLocationManager() //sets the location manager for getting core location
     
@@ -52,7 +56,16 @@ class ViewController: UIViewController, UITextFieldDelegate, WCSessionDelegate, 
     
 
     @IBAction func buttonPressed(sender: AnyObject) {
-        panicInitated()
+        tapTime1 = tapTime2
+        tapTime2 = tapTime3
+        tapTime3 = NSDate.timeIntervalSinceReferenceDate()
+        if((tapTime3 - tapTime1) <= 3){
+            //triple tapped quickely, initiate panic sequence
+            tapTime1 = 10;
+            tapTime2 = 20;
+            tapTime3 = 30;
+            panicInitated()
+        }
     }
     
     
@@ -110,6 +123,8 @@ class ViewController: UIViewController, UITextFieldDelegate, WCSessionDelegate, 
                 }
                 else{
                     self.theButton.setTitle("SMS sending not available", forState: UIControlState.Normal)
+                    self.theButton.titleLabel?.textAlignment = .Center
+                    NSLog("can't send text")
                 }
             }
             else {
