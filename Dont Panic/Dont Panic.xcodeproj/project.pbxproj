@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 47;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -21,6 +21,9 @@
 		CE4267321B5AB93000324754 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4267311B5AB93000324754 /* InterfaceController.swift */; };
 		CE4267341B5AB93000324754 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4267331B5AB93000324754 /* ExtensionDelegate.swift */; };
 		CE4267361B5AB93000324754 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE4267351B5AB93000324754 /* Assets.xcassets */; };
+		CE454A021B5AD51D00E20C25 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE454A011B5AD51D00E20C25 /* Foundation.framework */; };
+		CE5C873A1B5AD47000901A07 /* WatchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE5C87391B5AD47000901A07 /* WatchKit.framework */; };
+		CE5C873D1B5AD4C500901A07 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE5C873C1B5AD4C500901A07 /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +105,9 @@
 		CE4267331B5AB93000324754 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
 		CE4267351B5AB93000324754 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE4267371B5AB93000324754 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE454A011B5AD51D00E20C25 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		CE5C87391B5AD47000901A07 /* WatchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchKit.framework; path = System/Library/Frameworks/WatchKit.framework; sourceTree = SDKROOT; };
+		CE5C873C1B5AD4C500901A07 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +115,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE454A021B5AD51D00E20C25 /* Foundation.framework in Frameworks */,
+				CE5C873D1B5AD4C500901A07 /* UIKit.framework in Frameworks */,
+				CE5C873A1B5AD47000901A07 /* WatchKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,6 +154,7 @@
 				CE4267211B5AB92F00324754 /* Dont Panic WatchKit App */,
 				CE4267301B5AB93000324754 /* Dont Panic WatchKit Extension */,
 				CE4266F61B5AB92F00324754 /* Products */,
+				CE5C873B1B5AD4A800901A07 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -210,6 +220,16 @@
 				CE4267371B5AB93000324754 /* Info.plist */,
 			);
 			path = "Dont Panic WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		CE5C873B1B5AD4A800901A07 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CE454A011B5AD51D00E20C25 /* Foundation.framework */,
+				CE5C873C1B5AD4C500901A07 /* UIKit.framework */,
+				CE5C87391B5AD47000901A07 /* WatchKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -329,11 +349,12 @@
 					};
 					CE42672B1B5AB93000324754 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = TNWV9U8ZK9;
 					};
 				};
 			};
 			buildConfigurationList = CE4266F01B5AB92F00324754 /* Build configuration list for PBXProject "Dont Panic" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 6.3";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -570,10 +591,13 @@
 		CE42673B1B5AB93000324754 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Dont Panic WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.GopherStudios.Dont-Panic.watchkitapp.watchkitextension";
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -584,10 +608,13 @@
 		CE42673C1B5AB93000324754 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Dont Panic WatchKit Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.GopherStudios.Dont-Panic.watchkitapp.watchkitextension";
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -605,7 +632,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.GopherStudios.Dont-Panic.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
+				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
@@ -621,7 +648,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.GopherStudios.Dont-Panic.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
+				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
@@ -632,9 +659,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Dont Panic/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.GopherStudios.Dont-Panic";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -643,9 +672,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Dont Panic/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.GopherStudios.Dont-Panic";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -716,6 +747,7 @@
 				CE42673C1B5AB93000324754 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CE42673E1B5AB93000324754 /* Build configuration list for PBXNativeTarget "Dont Panic WatchKit App" */ = {
 			isa = XCConfigurationList;
@@ -724,6 +756,7 @@
 				CE4267401B5AB93000324754 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CE4267421B5AB93000324754 /* Build configuration list for PBXNativeTarget "Dont Panic" */ = {
 			isa = XCConfigurationList;
@@ -732,6 +765,7 @@
 				CE4267441B5AB93000324754 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CE4267451B5AB93000324754 /* Build configuration list for PBXNativeTarget "Dont PanicTests" */ = {
 			isa = XCConfigurationList;
@@ -740,6 +774,7 @@
 				CE4267471B5AB93000324754 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CE4267481B5AB93000324754 /* Build configuration list for PBXNativeTarget "Dont PanicUITests" */ = {
 			isa = XCConfigurationList;
@@ -748,6 +783,7 @@
 				CE42674A1B5AB93000324754 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
