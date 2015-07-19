@@ -16,9 +16,15 @@ class ViewController: UIViewController, UITextFieldDelegate, WCSessionDelegate, 
 
     @IBOutlet weak var phoneNumber: UITextField!
     @IBOutlet weak var timeUntilCall: UILabel!
+    @IBOutlet weak var theButton: UIButton!
     
     let session : WCSession!    //sets the watch connectivity session
     let locationManager = CLLocationManager() //sets the location manager for getting core location
+    
+    //in the below section of code we set up the user defaults, which are used for storing your default contact
+    
+    let userDefaults = NSUserDefaults.standardUserDefaults()
+    
     
     //we need to set up the watch connect session if possible
     required init?(coder aDecoder: NSCoder) {
@@ -39,7 +45,9 @@ class ViewController: UIViewController, UITextFieldDelegate, WCSessionDelegate, 
         locationManager.startUpdatingLocation()
         
         self.phoneNumber.delegate = self
-        self.phoneNumber.text = "260-413-6395"
+        if(self.userDefaults.valueForKey("emergencyContact") != nil){
+            phoneNumber.text = self.userDefaults.valueForKey("emergencyContact") as? String
+        }
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -118,6 +126,9 @@ class ViewController: UIViewController, UITextFieldDelegate, WCSessionDelegate, 
                     controller.messageComposeDelegate = self
                     self.presentViewController(controller, animated: true, completion: nil)
                 }
+                else{
+                    self.theButton.setTitle("SMS sending not available", forState: UIControlState.Normal)
+                }
             }
             else {
                 print("Problem with the data received from geocoder")
@@ -163,6 +174,21 @@ class ViewController: UIViewController, UITextFieldDelegate, WCSessionDelegate, 
     
     override func viewWillDisappear(animated: Bool) {
         self.navigationController?.navigationBarHidden = false
+    }
+    
+    //MARK: KEYBOARD CONTROLS
+    func textFieldDidEndEditing(textField: UITextField) {
+        textField.resignFirstResponder()
+        userDefaults.setObject(textField.text, forKey: "emergencyContact")
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        if (textField.text!.isEmpty)
+        {
+            return false
+        }
+        return true
     }
 }
 

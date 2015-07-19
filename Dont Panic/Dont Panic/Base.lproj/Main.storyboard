@@ -221,6 +221,7 @@
                     <navigationItem key="navigationItem" id="n2k-98-K17"/>
                     <connections>
                         <outlet property="phoneNumber" destination="Clt-vK-GZM" id="yKJ-TP-r9s"/>
+                        <outlet property="theButton" destination="Nl9-oz-XZd" id="egY-Vg-PLZ"/>
                         <outlet property="timeUntilCall" destination="V5M-BO-tZB" id="HGG-IC-qY6"/>
                     </connections>
                 </viewController>
