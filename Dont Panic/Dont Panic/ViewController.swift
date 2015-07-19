@@ -89,6 +89,19 @@ class ViewController: UIViewController, UITextFieldDelegate, WCSessionDelegate, 
         sendText()
                 //callContact(self.phoneNumber.text!)
     }
+    func panicCleared(){
+        if(WCSession.isSupported()) {
+            
+            // create a message dictionary to send
+            let message = ["panicInitiated" : 0]
+            
+            session.sendMessage(message, replyHandler: { (content:[String : AnyObject]) -> Void in
+                print("Our counterpart sent something back. This is optional")
+                }, errorHandler: {  (error ) -> Void in
+                    print("We got an error from our paired device : " + error.domain)
+            })
+        }
+    }
     
     //function for setting up and sending a text to your emergency contact
     func sendText(){
@@ -137,12 +150,14 @@ class ViewController: UIViewController, UITextFieldDelegate, WCSessionDelegate, 
             let alert = UIAlertController(title: "Unable to get location", message: "You are unable to get a location", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Ok!", style: UIAlertActionStyle.Default, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
+            self.panicCleared()
         }
     }
     
     //This function returns us from the message view controller once the message is actually sent.
     func messageComposeViewController(controller: MFMessageComposeViewController, didFinishWithResult result: MessageComposeResult) {
         self.dismissViewControllerAnimated(true, completion: nil)
+        self.panicCleared()
     }
     
     //calls your set contact. This isn't actually implemented, but is here for possible future watch use

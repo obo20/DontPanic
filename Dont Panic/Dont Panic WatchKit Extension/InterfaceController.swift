@@ -42,34 +42,29 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
             if(emergencyState == false)
             {
                 self.emergencyState = true
-                self.labelOutlet.setText("EMERGENCY")
-                self.myButton.setTitle("Triple tap to clear!")
-                self.myButton.setBackgroundColor(UIColor(red: 255.0, green: 0.0, blue: 0.0, alpha: 1.0))
-                tapTime1 = 10; //resetting
-                tapTime2 = 20; //resetting
-                tapTime3 = 30; //resetting
-                watchPanicInitiated(1)
+                watchPanicInitiated()
                 
             }
             //used for future emergency cancelling
             else
             {
                 emergencyState = false
-                self.labelOutlet.setText("Don't Panic 😎")
-                self.myButton.setTitle("Triple Tap for Emergency")
-                self.myButton.setBackgroundColor(UIColor(red: 153.0/255, green: 204.0/255, blue: 255.0/255, alpha: 1.0))
-                tapTime1 = 10; //resetting
-                tapTime2 = 20; //resetting
-                tapTime3 = 30; //resetting
+                watchPanicCleared()
             }
         }
     }
     
-    func watchPanicInitiated(panicCode : Int){
+    func watchPanicInitiated(){
         if(WCSession.isSupported()) {
+            self.labelOutlet.setText("EMERGENCY")
+            self.myButton.setTitle("Triple tap to clear!")
+            self.myButton.setBackgroundColor(UIColor(red: 255.0, green: 0.0, blue: 0.0, alpha: 1.0))
+            tapTime1 = 10; //resetting
+            tapTime2 = 20; //resetting
+            tapTime3 = 30; //resetting
             
             // create a message dictionary to send
-            let message = ["panicInitiated" : panicCode]
+            let message = ["panicInitiated" : 1]
             
             session.sendMessage(message, replyHandler: { (content:[String : AnyObject]) -> Void in
                 print("Our counterpart sent something back. This is optional")
@@ -78,6 +73,28 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
             })
         }
     }
+    
+    func watchPanicCleared(){
+        self.labelOutlet.setText("Don't Panic 😎")
+        self.myButton.setTitle("Triple Tap for Emergency")
+        self.myButton.setBackgroundColor(UIColor(red: 153.0/255, green: 204.0/255, blue: 255.0/255, alpha: 1.0))
+        tapTime1 = 10; //resetting
+        tapTime2 = 20; //resetting
+        tapTime3 = 30; //resetting
+    }
+    
+    func session(session: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
+        
+        // verify that we've gotten a number at the "buttonOffset" key
+        if let panicCode = message["panicInitiated"] as! Int? {
+            
+            if(panicCode == 0){
+                
+                watchPanicCleared()
+            }
+        }
+    }
+    
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         
