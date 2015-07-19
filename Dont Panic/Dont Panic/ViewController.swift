@@ -92,46 +92,52 @@ class ViewController: UIViewController, UITextFieldDelegate, WCSessionDelegate, 
     
     //function for setting up and sending a text to your emergency contact
     func sendText(){
-        let location = locationManager.location
+        if let location = locationManager.location{
         
-        //The CLGeocoder gives us an actual street address from the Core Location
-        CLGeocoder().reverseGeocodeLocation(location!, completionHandler: {(placemarks, error) -> Void in
-            print(location)
+            //The CLGeocoder gives us an actual street address from the Core Location
+            CLGeocoder().reverseGeocodeLocation(location, completionHandler: {(placemarks, error) -> Void in
+                print(location)
             
-            if error != nil {
-                print("Reverse geocoder failed with error" + error!.localizedDescription)
-                return
-            }
+                if error != nil {
+                    print("Reverse geocoder failed with error" + error!.localizedDescription)
+                    return
+                }
             
-            //here we take the placemarks and set them to strings for use in the text message setup
-            if let pm = placemarks!.first {
-                var textString : String
-                self.locationManager.stopUpdatingLocation()
-                let subThoroughfare = (pm.subThoroughfare != nil) ? pm.subThoroughfare : ""
-                let thoroughfare = (pm.thoroughfare != nil) ? pm.thoroughfare : ""
-                let locality = (pm.locality != nil) ? pm.locality : ""
-                let administrativeArea = (pm.administrativeArea != nil) ? pm.administrativeArea : ""
+                //here we take the placemarks and set them to strings for use in the text message setup
+                if let pm = placemarks!.first {
+                    var textString : String
+                    self.locationManager.stopUpdatingLocation()
+                    let subThoroughfare = (pm.subThoroughfare != nil) ? pm.subThoroughfare : ""
+                    let thoroughfare = (pm.thoroughfare != nil) ? pm.thoroughfare : ""
+                    let locality = (pm.locality != nil) ? pm.locality : ""
+                    let administrativeArea = (pm.administrativeArea != nil) ? pm.administrativeArea : ""
                 
-                textString = "Help! I'm currently experiencing an emergency at \(subThoroughfare!) \(thoroughfare!) \(locality!) \(administrativeArea!)! -Sent using the 'Don't Panic' app for iOS"
+                    textString = "Help! I'm currently experiencing an emergency at \(subThoroughfare!) \(thoroughfare!) \(locality!) \(administrativeArea!)! -Sent using the 'Don't Panic' app for iOS"
                 
-                if (MFMessageComposeViewController.canSendText()) {
-                    let controller = MFMessageComposeViewController()
-                    controller.body = textString
-                    controller.recipients = [self.phoneNumber.text!]
-                    controller.messageComposeDelegate = self
-                    self.presentViewController(controller, animated: true, completion: nil)
+                    if (MFMessageComposeViewController.canSendText()) {
+                        let controller = MFMessageComposeViewController()
+                        controller.body = textString
+                        controller.recipients = [self.phoneNumber.text!]
+                        controller.messageComposeDelegate = self
+                        self.presentViewController(controller, animated: true, completion: nil)
+                    }
+                    else{
+                        let alert = UIAlertController(title: "Unable to send text", message: "You are unable to send texts", preferredStyle: UIAlertControllerStyle.Alert)
+                        alert.addAction(UIAlertAction(title: "Ok!", style: UIAlertActionStyle.Default, handler: nil))
+                        self.presentViewController(alert, animated: true, completion: nil)
+                        NSLog("can't send text")
+                    }
                 }
-                else{
-                    self.theButton.setTitle("SMS sending not available", forState: UIControlState.Normal)
-                    self.theButton.titleLabel?.textAlignment = .Center
-                    NSLog("can't send text")
+                else {
+                    print("Problem with the data received from geocoder")
                 }
-            }
-            else {
-                print("Problem with the data received from geocoder")
-            }
-        })
-
+            })
+        }
+        else{
+            let alert = UIAlertController(title: "Unable to get location", message: "You are unable to get a location", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Ok!", style: UIAlertActionStyle.Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
     }
     
     //This function returns us from the message view controller once the message is actually sent.
