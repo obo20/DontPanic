@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE1840641B5B5F9F00587D93 /* ContactsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE1840631B5B5F9F00587D93 /* ContactsUI.framework */; };
+		CE1840661B5B6B1300587D93 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE1840651B5B6B1300587D93 /* CoreLocation.framework */; };
+		CE1840681B5B78C700587D93 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE1840671B5B78C700587D93 /* MessageUI.framework */; };
 		CE4266F91B5AB92F00324754 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4266F81B5AB92F00324754 /* AppDelegate.swift */; };
 		CE4266FB1B5AB92F00324754 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4266FA1B5AB92F00324754 /* ViewController.swift */; };
 		CE4266FE1B5AB92F00324754 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE4266FC1B5AB92F00324754 /* Main.storyboard */; };
@@ -83,6 +86,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CE1840631B5B5F9F00587D93 /* ContactsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ContactsUI.framework; path = System/Library/Frameworks/ContactsUI.framework; sourceTree = SDKROOT; };
+		CE1840651B5B6B1300587D93 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		CE1840671B5B78C700587D93 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		CE4266F51B5AB92F00324754 /* Dont Panic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dont Panic.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE4266F81B5AB92F00324754 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE4266FA1B5AB92F00324754 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +121,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE1840681B5B78C700587D93 /* MessageUI.framework in Frameworks */,
+				CE1840661B5B6B1300587D93 /* CoreLocation.framework in Frameworks */,
+				CE1840641B5B5F9F00587D93 /* ContactsUI.framework in Frameworks */,
 				CE454A021B5AD51D00E20C25 /* Foundation.framework in Frameworks */,
 				CE5C873D1B5AD4C500901A07 /* UIKit.framework in Frameworks */,
 				CE5C873A1B5AD47000901A07 /* WatchKit.framework in Frameworks */,
@@ -225,6 +234,9 @@
 		CE5C873B1B5AD4A800901A07 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CE1840671B5B78C700587D93 /* MessageUI.framework */,
+				CE1840651B5B6B1300587D93 /* CoreLocation.framework */,
+				CE1840631B5B5F9F00587D93 /* ContactsUI.framework */,
 				CE454A011B5AD51D00E20C25 /* Foundation.framework */,
 				CE5C873C1B5AD4C500901A07 /* UIKit.framework */,
 				CE5C87391B5AD47000901A07 /* WatchKit.framework */,

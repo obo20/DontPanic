@@ -8,14 +8,42 @@
 
 import UIKit
 import Foundation
+import WatchConnectivity
+import CoreLocation
+import MessageUI
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class ViewController: UIViewController, UITextFieldDelegate, WCSessionDelegate, CLLocationManagerDelegate, MFMessageComposeViewControllerDelegate {
 
     @IBOutlet weak var phoneNumber: UITextField!
     @IBOutlet weak var timeUntilCall: UILabel!
-
+    
+    let session : WCSession!    //sets the watch connectivity session
+    let locationManager = CLLocationManager()
+    
+    required init?(coder aDecoder: NSCoder) {
+        self.session = WCSession.defaultSession()
+        super.init(coder: aDecoder)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        if(WCSession.isSupported()) {
+            session.delegate = self
+            session.activateSession()
+        }
+//        if CLLocationManager.authorizationStatus() == .NotDetermined {
+//            locationManager.requestWhenInUseAuthorization()
+//        }
+//        
+//        if CLLocationManager.locationServicesEnabled() {
+//            locationManager.startUpdatingLocation()
+//        }
+        
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+        
         self.phoneNumber.delegate = self
         self.phoneNumber.text = "260-413-6395"
         // Do any additional setup after loading the view, typically from a nib.
@@ -37,12 +65,70 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func buttonPressed(sender: AnyObject) {
-        let phoneNumberString = self.phoneNumber.text
-        callContact(phoneNumberString!)
+        panicInitated()
     }
     
     func secondsToMinutesSeconds (seconds : Int) -> (Int, Int) {
         return ((seconds % 3600) / 60, (seconds % 3600) % 60)
+    }
+    
+    func session(session: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
+        
+        // verify that we've gotten a number at the "buttonOffset" key
+        if let panicCode = message["panicInitiated"] as! Int? {
+            
+            if(panicCode == 1){
+                
+                panicInitated()
+            }
+        }
+    }
+    
+    
+    //main function that handles panic items
+    func panicInitated(){
+        NSLog("panic initiated")
+        sendText()
+                //callContact(self.phoneNumber.text!)
+    }
+    
+    func sendText(){
+        let location = locationManager.location
+        CLGeocoder().reverseGeocodeLocation(location!, completionHandler: {(placemarks, error) -> Void in
+            print(location)
+            
+            if error != nil {
+                print("Reverse geocoder failed with error" + error!.localizedDescription)
+                return
+            }
+            
+            if let pm = placemarks!.first {
+                var textString : String
+                self.locationManager.stopUpdatingLocation()
+                let subThoroughfare = (pm.subThoroughfare != nil) ? pm.subThoroughfare : ""
+                let thoroughfare = (pm.thoroughfare != nil) ? pm.thoroughfare : ""
+                let locality = (pm.locality != nil) ? pm.locality : ""
+                let administrativeArea = (pm.administrativeArea != nil) ? pm.administrativeArea : ""
+                
+                textString = "Help! I'm currently experiencing an emergency at \(subThoroughfare!) \(thoroughfare!) \(locality!) \(administrativeArea!)! -Sent using the 'Don't Panic' app for iOS"
+                
+                if (MFMessageComposeViewController.canSendText()) {
+                    let controller = MFMessageComposeViewController()
+                    controller.body = textString
+                    controller.recipients = [self.phoneNumber.text!]
+                    controller.messageComposeDelegate = self
+                    self.presentViewController(controller, animated: true, completion: nil)
+                }
+            }
+            else {
+                print("Problem with the data received from geocoder")
+            }
+        })
+
+    }
+    
+    func messageComposeViewController(controller: MFMessageComposeViewController, didFinishWithResult result: MessageComposeResult) {
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     func callContact(phoneNumber : String){
@@ -65,6 +151,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         return result
         
+    }
+    
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        print("Error while updating location " + error.localizedDescription)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        self.navigationController?.navigationBarHidden = false
     }
 }
 

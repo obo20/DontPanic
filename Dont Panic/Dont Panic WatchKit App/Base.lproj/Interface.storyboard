@@ -10,12 +10,25 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Dont_Panic_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <label width="136" height="32" alignment="center" text="Watch Label" textAlignment="center" id="eSu-ZE-T6b"/>
-                        <button width="1" height="112" alignment="left" verticalAlignment="bottom" title="Button" id="OqS-HS-IZs"/>
+                        <label width="136" height="39" alignment="center" text="Dont Panic 😎" textAlignment="center" id="eSu-ZE-T6b">
+                            <fontDescription key="font" type="system" weight="semibold" pointSize="18"/>
+                        </label>
+                        <button width="1" height="107" alignment="left" verticalAlignment="bottom" title="Triple Tap for Emergency" id="OqS-HS-IZs">
+                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="0.59999999999999998" green="0.80000000000000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="font" type="boldSystem" pointSize="19"/>
+                            <connections>
+                                <action selector="buttonPressed" destination="AgC-eL-Hgc" id="Ysh-JB-nrK"/>
+                            </connections>
+                        </button>
                     </items>
+                    <connections>
+                        <outlet property="labelOutlet" destination="eSu-ZE-T6b" id="iLf-WB-lN3"/>
+                        <outlet property="myButton" destination="OqS-HS-IZs" id="v3h-Cz-Nfw"/>
+                    </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="340" y="399.5"/>
+            <point key="canvasLocation" x="381" y="331.5"/>
         </scene>
     </scenes>
 </document>

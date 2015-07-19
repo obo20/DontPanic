@@ -7,26 +7,16 @@
 //
 
 import UIKit
-import WatchConnectivity
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, WCSessionDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    func panicInitiated()
-    {
-        NSLog("Button Tapped")
-    }
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        if (WCSession.isSupported()) {
-            let session = WCSession.defaultSession()
-            session.delegate = self // conforms to WCSessionDelegate
-            session.activateSession() //activates the session making the iPhone now available to receive messages
-        }
         return true
     }
 
